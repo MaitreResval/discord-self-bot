@@ -1,0 +1,19 @@
+{
+  "prefix": "!",
+  "afkCooldown": {},
+  "antiGroup": true,
+  "antiRaid": {
+    "enabled": false,
+    "spamThreshold": 5,
+    "spamInterval": 3000,
+    "joinThreshold": 5,
+    "joinInterval": 10000,
+    "userMessages": {},
+    "recentJoins": [
+      {
+        "id": "792425695162531890",
+        "time": 1741104043663
+      }
+    ]
+  }
+}
