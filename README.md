@@ -1,25 +1,41 @@
-# Discord Selfbot
+## ⚙️ Configuration  
+🔹 **`setprefix <prefix>`** – Change le préfixe du bot.  
+🔹 **`help`** – Affiche la liste des commandes et leur utilisation.  
 
-Un selfbot Discord avec plusieurs commandes utiles.
+---
 
-## Installation
+## 🛡️ Protection  
+🛡️ **`antigroup <on/off>`** – Active/Désactive la protection contre les groupes.  
+🛡️ **`raid <on/off>`** – Active/Désactive la protection anti-raid.  
+🛡️ **`raidconfig`** – Affiche la configuration de l’anti-raid.  
+🧹 **`clear [nombre]`** – Supprime un certain nombre de vos messages.  
+🧹 **`purge [nombre]`** – Supprime un certain nombre de messages du salon.  
 
-1. Installez Node.js sur votre ordinateur
-2. Clonez ce repository
-3. Exécutez `npm install` pour installer les dépendances
-4. Remplacez `votre_token_discord_ici` dans le fichier `.env` par votre token Discord
-5. Lancez le bot avec `npm start`
+---
 
-## Commandes
+## 👤 Status & Activité  
+💠 **`status <online/idle/dnd/invisible>`** – Change votre statut.  
+📺 **`streaming <texte>`** – Définit un statut **Streaming**.  
+🎮 **`playing <texte>`** – Définit un statut **Joue à**.  
+👀 **`watching <texte>`** – Définit un statut **Regarde**.  
+🎧 **`listening <texte>`** – Définit un statut **Écoute**.  
+💤 **`afk`** – Active le mode AFK.  
 
-- `!clear [nombre]` - Supprime vos messages dans le canal (par défaut: 100)
-- `!antigroup on/off` - Active/désactive la protection contre les ajouts aux groupes
-- `!afk` - Active/désactive le mode AFK
-- `!ping` - Affiche la latence du bot
-- `!avatar [@utilisateur]` - Affiche l'avatar d'un utilisateur
-- `!purge [nombre]` - Supprime un nombre spécifique de messages dans le canal
-- `!userinfo [@utilisateur]` - Affiche les informations d'un utilisateur
+---
 
-## ⚠️ Avertissement
+## 🎮 Utilitaires  
+🏓 **`ping`** – Vérifie la latence du bot.  
+🖼️ **`avatar [@user]`** – Affiche l’avatar d’un utilisateur.  
+👤 **`userinfo [@user]`** – Affiche les informations d’un utilisateur.  
+🌍 **`serverinfo`** – Affiche les informations du serveur.  
+🕵️ **`snipe`** – Récupère le dernier message supprimé.  
+📝 **`embed <titre> <description>`** – Crée un message embed personnalisé.  
+👻 **`ghostping <@user>`** – Mentionne un utilisateur sans qu’il le voie.  
+🎁 **`nitro`** – Génère de faux codes Nitro (pour le fun).  
 
-L'utilisation d'un selfbot est contre les conditions d'utilisation de Discord. Utilisez ce code à vos propres risques.
+---
+
+## 📌 Informations supplémentaires  
+📜 **Préfixe actuel :** `config.prefix`  
+🤖 **Développé avec ❤️ par [TonNom]**  
+💡 **Besoin d’aide ?** Ouvre une issue sur GitHub !  
