@@ -37,5 +37,5 @@
 
 ## 📌 Informations supplémentaires  
 📜 **Préfixe actuel :** `config.prefix`  
-🤖 **Développé avec ❤️ par [TonNom]**  
+🤖 **Développé avec ❤️ par [Snypes]**  
 💡 **Besoin d’aide ?** Ouvre une issue sur GitHub !  
