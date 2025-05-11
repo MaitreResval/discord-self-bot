@@ -6,23 +6,23 @@ const client = new Client({
     checkUpdate: false
 });
 
-// Configuration par défaut
+// Config
 let config = {
     prefix: '!',
     afkCooldown: new Map(),
     antiGroup: false,
     antiRaid: {
         enabled: false,
-        spamThreshold: 5, // Nombre de messages similaires autorisés
-        spamInterval: 3000, // Intervalle en ms pour détecter le spam
-        joinThreshold: 5, // Nombre de joins suspects
-        joinInterval: 10000, // Intervalle pour les joins suspects
-        userMessages: new Map(), // Pour tracker le spam
-        recentJoins: [] // Pour tracker les joins suspects
+        spamThreshold: 5, 
+        spamInterval: 3000, 
+        joinThreshold: 5, 
+        joinInterval: 10000, 
+        userMessages: new Map(), 
+        recentJoins: [] 
     }
 };
 
-// Charger la configuration
+// Charger la config
 try {
     if (fs.existsSync('./config.json')) {
         const savedConfig = JSON.parse(fs.readFileSync('./config.json'));
@@ -39,7 +39,7 @@ client.on('ready', () => {
     client.user.setStatus('dnd');
 });
 
-// Gestionnaire de commandes
+// Gestionnaire des commandes
 client.on('messageCreate', async (message) => {
     if (!message?.author?.id || message.author.id !== client.user.id) return;
     if (!message.content?.startsWith(config.prefix)) return;
@@ -280,7 +280,7 @@ Préfixe actuel: \`${config.prefix}\`
     }
 });
 
-// Système AFK avec cooldown
+
 client.on('messageCreate', async (message) => {
     if (!message?.channel?.type || !message?.author?.id) return;
     if (!client.afk || message.author.id === client.user.id || message.channel.type !== 'DM') return;
@@ -322,12 +322,12 @@ client.on('channelCreate', async (channel) => {
     }
 });
 
-// Protection anti-raid
+
 client.on('messageCreate', async (message) => {
     if (!message?.guild || !config.antiRaid.enabled || message.author.id === client.user.id) return;
 
     try {
-        // Vérification du spam
+    
         const now = Date.now();
         const userData = config.antiRaid.userMessages.get(message.author.id) || { messages: [], lastMessageTime: 0 };
         
@@ -344,7 +344,7 @@ client.on('messageCreate', async (message) => {
             }
         }
 
-        // Détection de mentions de masse
+ 
         if (message.mentions.everyone || message.mentions.users.size > 10) {
             if (message.member.bannable) {
                 await message.member.ban({ reason: 'Anti-Raid: Mentions de masse' });
@@ -352,7 +352,7 @@ client.on('messageCreate', async (message) => {
             }
         }
 
-        // Détection de liens malveillants
+
         const suspiciousLinks = /(discord\.(gift|gg)|nitro)/gi;
         if (suspiciousLinks.test(message.content)) {
             await message.delete().catch(console.error);
@@ -366,7 +366,7 @@ client.on('messageCreate', async (message) => {
     }
 });
 
-// Protection contre les joins massifs
+
 client.on('guildMemberAdd', member => {
     if (!config.antiRaid.enabled) return;
 
@@ -381,7 +381,7 @@ client.on('guildMemberAdd', member => {
     }
 });
 
-// Système de snipe sécurisé
+
 client.snipes = new Map();
 client.on('messageDelete', message => {
     if (!message?.content || !message?.author?.id || !message?.channel?.id) return;
@@ -396,7 +396,7 @@ client.on('messageDelete', message => {
     });
 });
 
-// Fonction utilitaire pour générer un code Nitro
+
 function generateNitroCode() {
     const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     let code = '';
